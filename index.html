@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heygen Video Generator</title>
+</head>
+<body>
+    <h1>Gerador de Vídeo Heygen</h1>
+    <form action="/gerar-video" method="post">
+        <label for="text">Texto:</label><br>
+        <textarea name="text" rows="4" cols="50"></textarea><br><br>
+
+        <label for="avatar_id">Avatar:</label><br>
+        <select name="avatar_id">
+            {% for avatar in avatars %}
+                <option value="{{ avatar.id }}">{{ avatar.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="voice_id">Voz:</label><br>
+        <select name="voice_id">
+            {% for voice in voices %}
+                <option value="{{ voice.id }}">{{ voice.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <input type="submit" value="Gerar Vídeo">
+    </form>
+</body>
+</html>
